@@ -16,7 +16,7 @@ export class ContentService {
   }
 
   searchDepartments(keyWord: string) {
-    return this.departments.filter(department => Object.values(department).some(val => val.includes(keyWord)));
+    return this.departments.filter(department => Object.values(department).some(val => val.toLowerCase().includes(keyWord.toLowerCase())));
   }
 
   deleteDepartment(index: number) {

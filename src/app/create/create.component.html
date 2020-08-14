@@ -1,0 +1,44 @@
+<div class="container mt-5">
+
+  <form [formGroup]="addDepartment" (ngSubmit)="sendForm()" class="w-75">
+    <h2>Department Information</h2>
+
+    <input type="text" name="name" id="name" placeholder="Name" [formControlName]="'name'" class="w-100 mt-3 border border-dark">
+    <span class="text-danger opacity-80 mb-2 pl-2 pr-2 w-100"
+    *ngIf="!addDepartment.get('name').valid && addDepartment.get('name').touched">Please enter a valid Name</span>
+
+
+    <input type="text" name="APIKey" id="APIKey" placeholder="API Key" [formControlName]="'APIKey'" class="w-100 mt-3 border border-dark">
+    <span class="text-danger opacity-80 mb-2 pl-2 pr-2 w-100"
+    *ngIf="!addDepartment.get('APIKey').valid && addDepartment.get('APIKey').touched">Please enter a valid API Key</span>
+
+
+    <h4 class="mt-5">Contact Information Information</h4>
+
+    <input type="text" name="contactName" id="contactName" placeholder="contact Name" [formControlName]="'contactName'" class="w-100 mt-3 border border-dark">
+    <span class="text-danger opacity-80 mb-2 pl-2 pr-2 w-100"
+    *ngIf="!addDepartment.get('contactName').valid && addDepartment.get('contactName').touched">Please enter a valid Name</span>
+
+
+    <input type="email" name="contactEmail" id="contactEmail" placeholder="contact Email" [formControlName]="'contactEmail'" class="w-100 mt-3 border border-dark">
+    <span class="text-danger opacity-80 mb-2 pl-2 pr-2 w-100"
+    *ngIf="!addDepartment.get('contactEmail').valid && addDepartment.get('contactEmail').touched">Please enter a valid Email</span>
+
+    <input type="tel" name="contactPhone" id="contactPhone" placeholder="contact Phone" [formControlName]="'contactPhone'" class="w-100 mt-3 border border-dark">
+    <span class="text-danger opacity-80 mb-2 pl-2 pr-2 w-100"
+    *ngIf="!addDepartment.get('contactPhone').valid && addDepartment.get('contactPhone').touched">Please enter a valid Phone</span>
+
+    <div class="row mt-5">
+      <div class="col-md-4 col-12">
+        <button class="btn btn-secondary w-100" [routerLink]="['']">Cancel</button>
+      </div>
+
+      <div class="col-md-8 col-12">
+        <button type="submit" class="btn btn-success w-100">Save</button>
+      </div>
+    </div>
+
+
+  </form>
+
+</div>

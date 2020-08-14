@@ -1,0 +1,40 @@
+<div class="container mt-5">
+
+  <!-- begin searchBar -->
+  <h3>Deaprtments</h3>
+  <div class="row mt-4">
+    <div class="col-md-8 col-12">
+      <input type="text" class="form-control border border-dark" #searchInput placeholder="Search...."
+        (keyup)="search(searchInput.value)">
+    </div>
+    <div class="col-md-4 col-12">
+      <button type="button" class="btn btn-success w-100" [routerLink]="['/create']">Create Department</button>
+    </div>
+  </div>
+  <!-- End SearchBar -->
+
+
+  <!-- Begin Departments -->
+  <div class="row mt-5">
+    <div class="col-md-3 col-12" *ngFor="let department of departments, let index = index">
+      <div class="card p-3 border border-dark">
+        <fa-icon [icon]="faHospital" size="5x" class="text-center mb-3"></fa-icon>
+        <div class="card-body">
+          <h5 class="card-title mb-3">{{department.name}}</h5>
+          <button class="btn btn-success w-100"
+            [routerLink]="['/department', department.name.toLowerCase()]">Open</button>
+          <div class="row mt-2">
+            <div class="col-6 pr-0">
+              <button class="btn btn-secondary w-100" [routerLink]="['/edit']">Edit</button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-danger w-100" (click)="deleteDepartment(index, department.name)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end Departments -->
+
+</div>
